@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="menu-page">
+        <h1><%= title %></h1>
+        <p><%= description %></p>
+        <form action="/execution" method="GET">
+            <input type="text" name="target" placeholder="62xxxxxxxxxx" required>
+            <div class="mode-options">
+                <% modes.forEach(mode => { %>
+                    <label>
+                        <input type="radio" name="mode" value="<%= mode.id %>" required>
+                        <%= mode.label %>
+                    </label>
+                <% }); %>
+            </div>
+            <button type="submit">⚡ EXECUTE</button>
+        </form>
+        <a href="/dashboard" class="back-btn">⬅ Back</a>
+    </div>
+</body>
+</html>
