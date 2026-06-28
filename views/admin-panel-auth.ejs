@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Access</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="auth-code">
+        <h1>🔐 Admin Access</h1>
+        <form action="/admin-panel-auth" method="POST">
+            <input type="password" name="accessCode" placeholder="Masukkan kode akses" required>
+            <button type="submit">✅ Verify</button>
+        </form>
+        <% if (error) { %>
+            <div class="error-msg"><%= error %></div>
+        <% } %>
+        <a href="/dashboard" class="back-btn">⬅ Back</a>
+    </div>
+</body>
+</html>
