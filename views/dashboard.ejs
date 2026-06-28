@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Row-55 · Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mobile-only">
+    <div class="dashboard">
+        <div class="profile-header">
+            <video autoplay muted loop playsinline class="profile-video-sm">
+                <source src="<%= videoProfile %>" type="video/mp4">
+            </video>
+            <div>
+                <h2><%= user.username %></h2>
+                <p class="role"><%= user.role %></p>
+                <p class="expired">⏳ Exp: <%= expiredDate %></p>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <% menuItems.forEach(item => { %>
+                <a href="<%= item.link %>" class="menu-card">
+                    <div class="icon"><%= item.icon %></div>
+                    <span><%= item.name %></span>
+                </a>
+            <% }); %>
+        </div>
+        <a href="/logout" class="logout-btn">🚪 Logout</a>
+    </div>
+</body>
+</html>
