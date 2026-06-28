@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Authenticating...</title>
+    <style>
+        body { margin:0; background:#000; overflow:hidden; }
+        video { width:100vw; height:100vh; object-fit:cover; }
+    </style>
+</head>
+<body>
+    <video autoplay muted playsinline id="authVideo">
+        <source src="<%= videoAnim %>" type="video/mp4">
+    </video>
+    <script>
+        document.getElementById('authVideo').addEventListener('ended', function() {
+            window.location.href = '<%= redirectUrl %>';
+        });
+        // Fallback jika video gagal
+        setTimeout(() => {
+            window.location.href = '<%= redirectUrl %>';
+        }, 5000);
+    </script>
+</body>
+</html>
