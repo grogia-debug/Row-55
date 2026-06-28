@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="admin-panel">
+        <h1>🔧 Admin Panel</h1>
+        <div class="user-list">
+            <% users.forEach(u => { %>
+                <div class="user-item">
+                    <span><%= u.username %> (<%= u.role %>)</span>
+                    <span>Exp: <%= new Date(u.expired).toLocaleDateString('id-ID') %></span>
+                </div>
+            <% }); %>
+        </div>
+        <a href="/dashboard" class="back-btn">⬅ Back</a>
+    </div>
+</body>
+</html>
